@@ -49,8 +49,8 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main() {
-    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
-    println("Root product: $x1x2")
+    val result = thirdDigit(3801)
+    println("result: $result")
 }
 
 /**
@@ -59,8 +59,7 @@ fun main() {
  * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
  * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
  */
-fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
-
+fun seconds(hour: Int, min: Int, sec: Int): Int = sec + min * 60 + hour * 60 * 60
 /**
  * Тривиальная
  *
@@ -68,7 +67,10 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double {
+    val vershokLength = 4.445
+    return (sagenes * 48 * vershokLength + arshins * (48 / 3) * vershokLength + vershoks * vershokLength) / 100
+}
 
 /**
  * Тривиальная
@@ -92,7 +94,7 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
  * Пользователь задает целое число, большее 100 (например, 3801).
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
-fun thirdDigit(number: Int): Int = TODO()
+fun thirdDigit(number: Int): Int = number / 100 % 10
 
 /**
  * Простая
@@ -100,6 +102,13 @@ fun thirdDigit(number: Int): Int = TODO()
  * Поезд вышел со станции отправления в h1 часов m1 минут (например в 9:25) и
  * прибыл на станцию назначения в h2 часов m2 минут того же дня (например в 13:01).
  * Определите время поезда в пути в минутах (в данном случае 216).
+ *
+ * hoursDepart - h1
+ * minutesDepart - m1
+ * hoursArrive - h2
+ * minutesArrive - m2
+ *
+ * travelMinutes(9, 25, 13, 1)
  */
 fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int = TODO()
 
